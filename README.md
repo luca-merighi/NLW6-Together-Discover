@@ -1,5 +1,5 @@
 # NLW6 - Together - Discover
-Event @Rocketseat Next Level Week Together 6ª Edição - Junho de 2021
+Evento @Rocketseat Next Level Week Together 6ª Edição - Junho de 2021
 
 Nessa 6ª Edição do evento **Next Level Week**, como em qualquer outra trilha, nós vamos criar uma aplicação do zero, com muita prática, foco e comunidade. 
 
