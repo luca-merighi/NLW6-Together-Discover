@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luca Merighi">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/room.css">
+
+    <script src="../scripts/main.js" defer type="module"></script>
+    
+    <link rel="shortcut icon" href="../../img/favicon.svg" type="image/x-icon">
+    <title>Sala | Rocket.Q</title>
+</head>
+<body>
+    <div id="room" class="content">
+        <header class="header">
+            <a href="/">
+                <img 
+                src="../../img/logo-rocketq.svg" 
+                alt="Logo Rocket.Q" 
+                class="logo">
+            </a>
+
+            <div class="buttons">
+                <div 
+                id="room-id"
+                data-id="<%= roomId %>"
+                class="password-button"
+                tabindex="0">
+                    #<%= roomId %>
+                    <img 
+                    src="../../img/copy.svg" 
+                    alt="Ícone de copiar id da sala">
+                </div>
+                <a 
+                href="/create-room" 
+                class="button-create-room">
+                    <img 
+                    src="../../img/users-white.svg" 
+                    alt="Ícone de usuários">
+                    Criar Sala
+                </a>
+            </div>
+        </header>
+    
+        <main>
+            <section class="question-form">
+                <h2>Faça sua Pergunta</h2>
+                <form action="/question/create/<%= roomId %>" method="POST">
+                    <label 
+                    for-id="question" 
+                    class="sr-only">
+                        O que você quer perguntar?
+                    </label>
+                    <textarea 
+                    name="question" 
+                    id="question" 
+                    placeholder="O que você quer perguntar?"></textarea>
+                    <footer class="footer">
+                        <div class="question-text">
+                            <img 
+                            src="../../img/lock.svg" 
+                            alt="Ícone de um cadeado">
+                            <span>
+                                Esta pergunta é anônima
+                            </span>
+                        </div>
+                        <button class="send-button">
+                            Enviar
+                        </button>
+                    </footer>
+                </form>
+            </section>
+
+            <section class="question-container">
+                <h2 class="sr-only">
+                    Perguntas da Comunidade
+                </h2>
+
+                <% if(isNoQuestions) { %>
+                    <%- include('parts/no-question') %>
+                <% }%>
+
+                <div class="questions">
+                <% questions.forEach(question => { %>
+
+                        <div class="question">
+                            <div class="content">
+                                <figure>
+                                    <img 
+                                    src="../../img/user.svg" 
+                                    alt="Ícone de usuário">
+                                </figure>
+                                <p><%= question.title %></p>
+                            </div>
+                            <div class="actions">
+                                <a 
+                                href="#" 
+                                data-id="<%= question.id %>"
+                                class="mark-as-read">
+                                    <img 
+                                    src="../../img/check.svg" 
+                                    alt="Ícone de checagem">
+                                    Marcar como Lida
+                                </a>
+
+                                <a 
+                                href="#" 
+                                data-id="<%= question.id %>"
+                                class="delete-question">
+                                    <img 
+                                    src="../../img/trash.svg" 
+                                    alt="Ícone de uma lata de lixo">
+                                    Excluir
+                                </a>
+                            </div>  
+                        </div>
+                <% }) %>                    
+                </div>
+                
+                <% questionsRead.forEach(questionRead => { %>
+                    <div class="question read">
+                        <div class="content">
+                            <figure>
+                                <img 
+                                src="../../img/user.svg" 
+                                alt="Ícone de usuário">
+                            </figure>
+                            <p><%= questionRead.title %></p>
+                        </div>
+                        <div class="actions">
+
+                            <a 
+                            href="#" 
+                            data-id="<%= questionRead.id %>"
+                            class="delete-question">
+                                <img 
+                                src="../../img/trash.svg" 
+                                alt="Ícone de uma lata de lixo">
+                                Excluir
+                            </a>
+                        </div>  
+                    </div>
+                <%}) %>
+            </section>
+        </main>
+    </div>
+
+    <div id="modal">
+        <div class="modal-container">
+            <h2>Excluir Pergunta</h2>
+            <p>
+                Tem certeza que você deseja excluir esta pergunta?
+            </p>
+            <form action="#" method="POST">
+                <label 
+                for="password" 
+                class="sr-only">
+                    Digite sua senha de admin
+                </label>
+                <input 
+                type="password" 
+                name="password" 
+                id="password"
+                placeholder="Digite a senha">
+
+                <div class="buttons">
+                    <div tabindex="0" class="cancel-button">
+                        Cancelar
+                    </div>
+
+                    <button class="delete-button">
+                        Sim, excluir
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

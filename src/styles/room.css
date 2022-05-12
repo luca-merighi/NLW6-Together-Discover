@@ -1,0 +1,417 @@
+#room.content {
+    display: grid;
+    grid-template-columns: 
+        100%;
+    grid-template-rows: 
+        11.4rem 1fr;
+    grid-template-areas: 
+        'header header'
+        'main main';
+    max-width: min(112rem, 90%);
+}
+
+#room .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#room main {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding-top: 5rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+}
+
+.buttons .password-button {
+    background-color: var(--white);
+    padding: 0 1.6rem;
+    height: 5rem;
+
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--blue);
+    line-height: 0;
+
+    border: 2px solid var(--blue);
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.buttons .password-button:hover {
+    background-color: var(--ice);
+    color: var(--blue-hover);
+    border-color: var(--blue-hover);
+}
+
+.buttons .password-button:focus {
+    background-color: var(--ice);
+    color: var(--blue-hover);
+    border-color: var(--dark-blue);
+    outline: none;
+}
+
+.buttons .button-create-room {
+    background-color: var(--blue);
+    padding: 0 1.6rem;
+    height: 5rem;
+
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 0;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buttons .button-create-room:hover {
+    background-color: var(--blue-hover);
+}
+
+.buttons .button-create-room:focus {
+    background-color: var(--blue-hover);
+    outline: 2px solid var(--dark-blue);
+}
+
+.question-form {
+    width: 100%;
+
+}
+
+.question-form h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    color: var(--dark-blue);
+    margin-bottom: 2.4rem;
+}
+
+.question-form form {
+    border: 2px solid var(--grey-blue);
+    padding: 1.6rem;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.question-form form textarea {
+    background-color: transparent;
+    width: 100%;
+    height: 10rem;
+    resize: none;
+    border: none;
+}
+
+.question-form form textarea::placeholder {
+    color: var(--grey-blue);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.question-form form textarea:focus {
+    outline: none;
+}
+
+.question-form form .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .question-text {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .question-text span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--icons);
+}
+
+.footer .send-button {
+    background-color: var(--blue);
+    padding: 0 1.6rem;
+    height: 3.5rem;
+
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 0;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer .send-button:hover {
+    background-color: var(--blue-hover);
+}
+
+.footer .send-button:focus {
+    background-color: var(--blue-hover);
+    outline: 2px solid var(--dark-blue);
+}
+
+.question-container {
+    width: 100%;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.question {
+    background-color: var(--light-blue);
+    padding: 1.6rem;
+    height: 15rem;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.question .content {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.question .content figure {
+    background-color: var(--blue);
+    padding: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.question .content figure img {
+    width: 2rem;
+}
+
+.question .content p {
+    color: var(--dark-blue);
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    min-height: 5rem;
+
+}
+
+.question .actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.actions .mark-as-read,
+.actions .delete-question {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+
+    text-decoration: none;
+    color: var(--grey-dark);
+
+    transition: background 0.3s;
+}
+
+.actions .mark-as-read:hover,
+.actions .delete-question:hover {
+    background-color: var(--light-blue-hover);
+}
+
+.actions .mark-as-read:focus,
+.actions .delete-question:focus {
+    background-color: var(--light-blue-hover);
+    outline: 2px solid var(--dark-blue);
+}
+
+/* Question read */
+.question.read {
+    background-color: var(--grey-light);
+}
+
+.question.read .content figure {
+    background-color: var(--grey-blue);
+}
+
+/* Modals */
+#modal {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background-color: var(--dark-transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background-color: var(--white);
+    padding: 6.4rem;
+    width: min(59rem, 90%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.8rem;
+}
+
+.modal-container h2 {
+    font-weight: 700;
+    color: var(--dark);
+    font-family: 'Poppins';
+}
+
+.modal-container p {
+    color: var(--grey-dark);
+
+}
+
+.modal-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-container form input[type=password] {
+    padding: 1.6rem;
+    border: 2px solid var(--blue);
+    border-radius: 0.8rem;
+}
+
+.modal-container form input[type=password]:focus {
+    background-color: var(--ice);
+    border-color: var(--dark);
+}
+
+.modal-container form .buttons {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons .cancel-button {
+    background-color: var(--grey-light);
+    padding: 1.6rem;
+    color: var(--grey-dark);
+    border-radius: 0.8rem;
+}
+
+.buttons .cancel-button:hover {
+    background-color: var(--ice);
+    cursor: pointer;
+}
+
+.buttons .cancel-button:focus {
+    background-color: var(--ice);
+    outline: 2px solid var(--dark);
+}
+
+.buttons .delete-button {
+    background-color: var(--red);
+    padding: 1.6rem;
+    color: var(--white);
+    width: 100%;
+    border: none;
+    border-radius: 0.8rem;
+}
+
+.buttons .delete-button.blue-bg {
+    background-color: var(--blue);
+}
+
+.buttons .delete-button.blue-bg:hover {
+    background-color: var(--blue-hover);
+}
+
+.buttons .delete-button.blue-bg:focus {
+    background-color: var(--blue-hover);
+    outline: 2px solid var(--dark);
+}
+
+.buttons .delete-button:hover {
+    background-color: var(--red-hover);
+    cursor: pointer;
+}
+
+.buttons .delete-button:focus {
+    background-color: var(--red-hover);
+    outline: 2px solid var(--dark);
+}
+
+.no-question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.no-question-container h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-blue);
+}   
+
+.no-question-container p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--grey-dark);
+    width: 28%;
+    text-align: center;
+}

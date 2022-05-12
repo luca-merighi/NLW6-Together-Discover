@@ -1,0 +1,101 @@
+main .container .section input[type=number] {
+    height: 5rem;
+    width: 100%;
+    padding: 0 1.6rem;
+    margin-bottom: 1.8rem;
+
+    border: 2px solid var(--grey-blue);
+    border-radius: 0.8rem;
+}
+
+main .container .section input[type=number]:focus {
+    border: 2px solid var(--dark-blue);
+    background-color: var(--ice);
+}
+
+main .container .section .button-join-room {
+    background-color: var(--blue);
+    padding: 0 1.6rem;
+    height: 5rem;
+    width: 100%;
+
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 0;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+main .container .section .button-join-room:hover {
+    background-color: var(--blue-hover);
+}
+
+main .container .section .button-join-room:focus {
+    background-color: var(--blue-hover);
+    outline: 2px solid var(--dark-blue);
+}
+
+.container .separator {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.container .separator div {
+    height: 2px;
+    width: 100%;
+    background-color: var(--grey-blue);
+}
+
+.container .separator span {
+    color: var(--grey-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+main .container .section .button-create-room {
+    background-color: var(--white);
+    padding: 0 1.6rem;
+    height: 5rem;
+
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 0;
+
+    border: 2px solid var(--blue);
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+main .container .section .button-create-room:hover {
+    background-color: var(--ice);
+    color: var(--white);
+    border-color: var(--blue-hover);
+}
+
+main .container .section .button-create-room:focus {
+    background-color: var(--ice);
+    color: var(--white);
+    border-color: var(--dark-blue);
+}
